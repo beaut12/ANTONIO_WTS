@@ -1,0 +1,273 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #3d2a20;
+    background-color: #fffaf5;
+}
+
+
+.navbar {
+    background-color: #fffaf5;
+    padding: 18px 0;
+}
+
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #4b2e1f;
+}
+
+
+.navbar-brand:hover {
+    color: #4b2e1f;
+}
+
+
+.nav-link {
+    color: #6b4a3a;
+    margin-left: 15px;
+}
+
+
+.nav-link:hover {
+    color: #9a6546;
+}
+
+
+.hero-section {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(
+            rgba(40, 25, 15, 0.35),
+            rgba(40, 25, 15, 0.35)
+        ),
+        url("images/coffee-mainbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.hero-section h1 {
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+
+.hero-small-title {
+    color: #f4d8bd;
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.hero-tagline {
+    color: white;
+    font-size: 24px;
+    font-style: italic;
+}
+
+
+.hero-description {
+    color: #f7eee8;
+    max-width: 550px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+.explore-btn,
+.visit-btn {
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+.explore-btn:hover,
+.visit-btn:hover {
+    background-color: #4b2e1f;
+    color: white;
+}
+
+
+.about-section,
+.cozy-section {
+    padding: 90px 0;
+}
+
+
+.favorites-section,
+.visit-section {
+    padding: 90px 0;
+    background-color: #f5ebe3;
+}
+
+
+.section-small-title {
+    color: #9a6546;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #4b2e1f;
+}
+
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.about-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.favorite-card {
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.10);
+    transition: 0.3s;
+}
+
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.favorite-card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+
+.card-body {
+    padding: 25px;
+}
+
+
+.card-title {
+    color: #4b2e1f;
+    font-weight: bold;
+}
+
+.cozy-image {
+    width: 100%;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.visit-box {
+    text-align: center;
+    background-color: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+footer {
+    background-color: #3d261a;
+    color: #f7eee8;
+    text-align: center;
+    padding: 40px 0;
+}
+
+
+footer p:first-child {
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        min-height: 600px;
+        text-align: center;
+        background-position: center;
+    }
+
+
+    .hero-section h1 {
+        font-size: 40px;
+    }
+
+
+    .hero-description {
+        margin: auto;
+    }
+
+
+    h2 {
+        font-size: 32px;
+    }
+
+
+    .about-section,
+    .favorites-section,
+    .cozy-section,
+    .visit-section {
+        padding: 65px 0;
+    }
+
+
+    .visit-box {
+        padding: 35px 20px;
+    }
+
+
+    .navbar-nav {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+
+    .nav-link {
+        margin-left: 0;
+    }
+
+}
