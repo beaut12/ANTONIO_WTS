@@ -103,6 +103,12 @@
 
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="logout()">
+                               Logout
+                            </a>
+                        </li>
+
                     </ul>
 
                 </div>
@@ -128,11 +134,10 @@
                     <div class="col-lg-7">
 
                         <p class="hero-small-title">
-
-                            WELCOME TO
-
+                           WELCOME!
                         </p>
 
+                        <p id="welcomeMessage" class="hero-small-title"></p>
 
                         <h1>
 
@@ -542,6 +547,23 @@
 
     </script>
 
+    <script>
+    const loggedInUser = sessionStorage.getItem("loggedInUser");
+
+    if (!loggedInUser) {
+        window.location.href = "login.html";
+    } else {
+        document.getElementById("welcomeMessage").textContent =
+            "Welcome, " + loggedInUser + "!";
+    }
+    </script>
+
+    <script>
+    function logout() {
+        sessionStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+    }
+    </script>
 
 </body>
 
