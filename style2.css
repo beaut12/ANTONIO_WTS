@@ -54,7 +54,7 @@ body {
             rgba(40, 25, 15, 0.35),
             rgba(40, 25, 15, 0.35)
         ),
-        url("images/coffee-mainbg.jpg");
+        url("coffee-mainbg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
