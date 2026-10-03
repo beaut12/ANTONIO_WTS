@@ -21,7 +21,7 @@ body {
             rgba(55, 35, 20, 0.35),
             rgba(55, 35, 20, 0.35)
         ),
-        url("images/coffee-morning.jpg");
+        url("coffee-morning.jpg");
 
     background-size: cover;
     background-position: center;
@@ -39,7 +39,7 @@ body {
             rgba(20, 15, 12, 0.45),
             rgba(20, 15, 12, 0.45)
         ),
-        url("images/coffee-night.jpg");
+        url("coffee-night.jpg");
 
     background-size: cover;
     background-position: center;
