@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login | Mi Amor Café</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
 </head>
 
 <body class="login-page">
@@ -25,17 +30,16 @@
                 <p>Start your cozy morning with us.</p>
             </div>
 
-            <form action="#" method="post">
+            <form id="loginForm">
 
                 <div class="form-group">
-                    <label for="login-email">Email / Username</label>
+                    <label for="login-email">Username</label>
 
                     <input
                         type="text"
                         id="login-email"
-                        name="login-email"
-                        placeholder="Enter your email or username"
-                        required>
+                        name="username"
+                        placeholder="Enter your username">
                 </div>
 
                 <div class="form-group">
@@ -44,9 +48,8 @@
                     <input
                         type="password"
                         id="login-password"
-                        name="login-password"
-                        placeholder="Enter your password"
-                        required>
+                        name="password"
+                        placeholder="Enter your password">
                 </div>
 
                 <div class="form-options">
@@ -76,6 +79,78 @@
         </section>
 
     </main>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#loginForm").validate({
+
+                rules: {
+
+                    username: {
+                        required: true
+                    },
+
+                    password: {
+                        required: true
+                    }
+
+                },
+
+                messages: {
+
+                    username: {
+                        required: "Please enter your username."
+                    },
+
+                    password: {
+                        required: "Please enter your password."
+                    }
+
+                },
+
+                submitHandler: function (form) {
+
+                    const registeredUsername =
+                        localStorage.getItem("registeredUsername");
+
+                    const registeredPassword =
+                        localStorage.getItem("registeredPassword");
+
+                    const enteredUsername =
+                        $("#login-email").val();
+
+                    const enteredPassword =
+                        $("#login-password").val();
+
+
+                    if (
+                        enteredUsername === registeredUsername &&
+                        enteredPassword === registeredPassword
+                    ) {
+                        sessionStorage.setItem(
+                            "loggedInUser",
+                            enteredUsername
+                        );
+
+                        window.location.href = "index.html";
+
+                    } else {
+
+                        alert(
+                            "Invalid username or password. Please try again."
+                        );
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
 
