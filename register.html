@@ -2,12 +2,20 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Register | Mi Amor Café</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
+
 </head>
+
 
 <body class="register-page">
 
@@ -16,86 +24,289 @@
         <section class="register-card">
 
             <header class="brand-header">
+
                 <h1>MI AMOR CAFÉ</h1>
-                <p>Made with love, served with warmth.</p>
+
+                <p>
+                    Made with love, served with warmth.
+                </p>
+
             </header>
 
+
             <div class="form-header">
+
                 <h2>Create Your Account</h2>
-                <p>Join us for your next favorite cup.</p>
+
+                <p>
+                    Join us for your next favorite cup.
+                </p>
+
             </div>
 
-            <form action="#" method="post">
+
+            <form id="registerForm">
 
                 <div class="form-group">
-                    <label for="fullname">Full Name</label>
+
+                    <label for="fullname">
+                        Full Name
+                    </label>
 
                     <input
                         type="text"
                         id="fullname"
                         name="fullname"
-                        placeholder="Enter your full name"
-                        required>
+                        placeholder="Enter your full name">
+
                 </div>
 
                 <div class="form-group">
-                    <label for="username">Username</label>
+
+                    <label for="username">
+                        Username
+                    </label>
 
                     <input
                         type="text"
                         id="username"
                         name="username"
-                        placeholder="Choose a username"
-                        required>
+                        placeholder="Choose a username">
+
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+
+                    <label for="email">
+                        Email Address
+                    </label>
 
                     <input
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Enter your email"
-                        required>
+                        placeholder="Enter your email">
+
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password</label>
+
+                    <label for="password">
+                        Password
+                    </label>
 
                     <input
                         type="password"
                         id="password"
                         name="password"
-                        placeholder="Create a password"
-                        required>
+                        placeholder="Create a password">
+
                 </div>
 
                 <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
+
+                    <label for="confirm-password">
+                        Confirm Password
+                    </label>
 
                     <input
                         type="password"
                         id="confirm-password"
                         name="confirm-password"
-                        placeholder="Confirm your password"
-                        required>
+                        placeholder="Confirm your password">
+
                 </div>
+
 
                 <button type="submit">
                     Register
                 </button>
 
+
             </form>
 
+
             <p class="account-link">
+
                 Already have an account?
-                <a href="login.html">Login Here</a>
+
+                <a href="login.html">
+                    Login Here
+                </a>
+
             </p>
+
 
         </section>
 
     </main>
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            $("#registerForm").validate({
+
+                rules: {
+
+                    fullname: {
+
+                        required: true,
+
+                        minlength: 2
+
+                    },
+
+
+                    username: {
+
+                        required: true,
+
+                        minlength: 3
+
+                    },
+
+
+                    email: {
+
+                        required: true,
+
+                        email: true
+
+                    },
+
+
+                    password: {
+
+                        required: true,
+
+                        minlength: 5
+
+                    },
+
+
+                    "confirm-password": {
+
+                        required: true,
+
+                        equalTo: "#password"
+
+                    }
+
+                },
+
+
+                messages: {
+
+                    fullname: {
+
+                        required:
+                            "Please enter your full name.",
+
+                        minlength:
+                            "Name must be at least 2 characters."
+
+                    },
+
+
+                    username: {
+
+                        required:
+                            "Please choose a username.",
+
+                        minlength:
+                            "Username must be at least 3 characters."
+
+                    },
+
+
+                    email: {
+
+                        required:
+                            "Please enter your email address.",
+
+                        email:
+                            "Please enter a valid email address."
+
+                    },
+
+
+                    password: {
+
+                        required:
+                            "Please create a password.",
+
+                        minlength:
+                            "Password must be at least 5 characters."
+
+                    },
+
+
+                    "confirm-password": {
+
+                        required:
+                            "Please confirm your password.",
+
+                        equalTo:
+                            "Passwords do not match."
+
+                    }
+
+                },
+
+
+                submitHandler: function (form) {
+
+
+                    const fullname =
+                        $("#fullname").val();
+
+                    const username =
+                        $("#username").val();
+
+                    const email =
+                        $("#email").val();
+
+                    const password =
+                        $("#password").val();
+
+
+                    localStorage.setItem(
+                        "registeredFullname",
+                        fullname
+                    );
+
+                    localStorage.setItem(
+                        "registeredUsername",
+                        username
+                    );
+
+                    localStorage.setItem(
+                        "registeredEmail",
+                        email
+                    );
+
+                    localStorage.setItem(
+                        "registeredPassword",
+                        password
+                    );
+
+
+                    alert(
+                        "Registration successful! You can now log in."
+                    );
+
+                    window.location.href = "login.html";
+
+                }
+
+            });
+
+        });
+
+    </script>
+
 
 </body>
 
